@@ -1,17 +1,16 @@
 import PropTypes from "prop-types";
-import {useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import context from "./Context";
 
 function Provider({ children }) {
-  const [searchApi, setSearchApi] = useState([]);
-
+  const [location, setLocation] = useState([]);
 
   const contextValue = useMemo(
     () => ({
-      searchApi,
-      setSearchApi,
+      location,
+      setLocation,
     }),
-    [searchApi, setSearchApi]
+    [location, setLocation]
   );
   return <context.Provider value={contextValue}>{children}</context.Provider>;
 }
