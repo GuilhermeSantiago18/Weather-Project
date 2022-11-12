@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import context from "../Services/Context";
+import '../App.css'
 
 export default function Search() {
   const { location, setLocation } = useContext(context);
@@ -28,12 +29,13 @@ export default function Search() {
         placeholder="Digite a cidade"
         onChange={handleChange}
       />
-      <button type="button" onClick={handleClick}>
+      <button 
+       class="btn-inicial" type="button" onClick={handleClick}>
         Pesquisar
       </button>
       {disable && (
         
-        <section>
+        <section className="section">
           <p>{location.name}</p>
           <img className="country" alt={location.sys.country} src={`https://countryflagsapi.com/png/${location.sys.country}`}></img>
 
