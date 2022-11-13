@@ -1,24 +1,25 @@
 body {
   background-color: rgb(54, 54, 96);
-  /* background-image: url('https://images.prismic.io/mystique%2F424d9b84-832f-44ff-af30-a0ec16d69f03_5e2aabb9-1560-44c5-8a92-a3ba0b2b1bd8-eiffel-tower-paris.jpg?auto=compress%2Cformat&w=870&h=562.5&q=75&crop=faces&fm=webp'); */
-  /* background-image: url('https://media.istockphoto.com/id/617882378/pt/foto/cidade-de-singapura-singapura.jpg?s=612x612&w=0&k=20&c=CgwRwgy0RiCTH89vqDYUekB2DiirSdIi2J5lU-X26pM='); */
+  background-image: url(./Images//world-11047.jpg);
+  background-size: 1360px
+  
 } 
-/* .country {
-  max-width: 100%;
-} */
+
 .container-global-maior {
   display: flex;
-  border: 5px solid red;
+  /* border: 5px solid red; */
   justify-content: center;
   align-items: center;
   flex-direction: column;
   height: 50vh;
+  background-color: rgba(0, 0, 0, 0.629);
 }
 .container-global {
   display: flex;
-  border: 5px solid red;
+  /* border: 5px solid red; */
   justify-content: center;
   align-items: center;
+  
 }
 
 
@@ -33,18 +34,19 @@ body {
   width: 180px;
   height: 38px;
   border-radius: 0em 1.1em 1.1em 0em;
-  background-color: gold;
+  background-color: rgb(218, 165, 32);
 }
 
 .title {
   display: flex;
   justify-content: center;
+  color: rgb(218, 165, 32);
 }
 
-/* .inputs {
-  display: flex;
-  flex-direction: row;
-  border: 1px solid;
-  align-items:  center;
-} */
+.informations {
+  background-color: gold;
+}
 
+.countryname {
+  color: gold;
+}

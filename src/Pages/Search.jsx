@@ -7,12 +7,20 @@ export default function Search() {
   const [valueInput, setValueInput] = useState("");
   const [disable, setDisable] = useState(false);
 
+
   const handleClick = async () => {
     const urlWeather = `http://api.openweathermap.org/data/2.5/weather?q=${valueInput}&lang=pt_br,uk&APPID=6c65d4b916ef01e6bd8bec09df51d9b1`;
     const response = await fetch(urlWeather);
     const data = await response.json();
-    setLocation(data);
-    setDisable(true);
+    if (data.cod === "400") {
+      global.alert('Digite a localidade desejada')
+    } else {
+      setLocation(data);
+      setDisable(true);
+
+    }
+    
+    console.log(data)
   };
 
   useEffect(() => {
@@ -41,14 +49,15 @@ export default function Search() {
       </div>
       {disable && (
         <section className="section">
-          <p>{location.name}</p>
+          <p className="countryname">City: {location.name}</p>
           <div className="country">
             <img
+              width="50px"
               alt={location.sys.country}
               src={`https://countryflagsapi.com/png/${location.sys.country}`}
             ></img>
           </div>
-          <ul>
+          <ul className="informations">
             Temperatura ºC
             <p>{location.main.temp}</p>
             Latitude
