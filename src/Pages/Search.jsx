@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import context from "../Services/Context";
-import '../App.css'
+import "../App.css";
 
 export default function Search() {
   const { location, setLocation } = useContext(context);
@@ -23,25 +23,34 @@ export default function Search() {
     setValueInput(target.value);
   };
   return (
-    <div>
-      <input
-        type="text"
-        placeholder="Digite a cidade"
-        onChange={handleChange}
-      />
-      <button 
-       class="btn-inicial" type="button" onClick={handleClick}>
-        Pesquisar
-      </button>
+    <div className="container-global-maior">
+      <header className="title">
+        <h1>Weather Country</h1>
+      </header>
+    <div className="container-global">
+      <div className="inputs">
+        <input
+          className="inputText"
+          type="text"
+          placeholder="Digite a cidade"
+          onChange={handleChange}
+        />
+        <button class="inputBtn" type="button" onClick={handleClick}>
+          Pesquisar
+        </button>
+      </div>
       {disable && (
-        
         <section className="section">
           <p>{location.name}</p>
-          <img className="country" alt={location.sys.country} src={`https://countryflagsapi.com/png/${location.sys.country}`}></img>
-
+          <div className="country">
+            <img
+              alt={location.sys.country}
+              src={`https://countryflagsapi.com/png/${location.sys.country}`}
+            ></img>
+          </div>
           <ul>
-          Temperatura ºC
-            <p>{(location.main.temp)}</p>
+            Temperatura ºC
+            <p>{location.main.temp}</p>
             Latitude
             <li>{location.coord.lat}</li>
             Longitude
@@ -49,6 +58,7 @@ export default function Search() {
           </ul>
         </section>
       )}
+    </div>
     </div>
   );
 }
