@@ -14,7 +14,11 @@ export default function Search() {
     const data = await response.json();
     if (data.cod === "400") {
       global.alert('Digite a localidade desejada')
-    } else {
+    } 
+    else if (data.cod === "404") {
+      global.alert('Cidade não existe')
+    }
+    else {
       setLocation(data);
       setDisable(true);
 
