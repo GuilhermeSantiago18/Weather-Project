@@ -23,10 +23,8 @@ export default function Search() {
       setDisable(true);
 
     }
-    
-    console.log(data)
   };
-
+  console.log(location)
   useEffect(() => {
     setDisable(false);
   }, []);
@@ -35,6 +33,7 @@ export default function Search() {
     setValueInput(target.value);
   };
   return (
+    <>
     <div className="container-global-maior">
       <header className="title">
         <h1>Weather Country</h1>
@@ -62,8 +61,8 @@ export default function Search() {
             ></img>
           </div>
           <ul className="informations">
-            Temperatura ºC
-            <p>{location.main.temp}</p>
+            Temperatura 
+            <p>{Math.round(location.main.temp -273)} ºC</p>
             Latitude
             <li>{location.coord.lat}</li>
             Longitude
@@ -73,5 +72,9 @@ export default function Search() {
       )}
     </div>
     </div>
+    <footer className="footer">
+        Todos os direitos reservados a Richard apanha no codingame
+    </footer>
+    </>
   );
 }
