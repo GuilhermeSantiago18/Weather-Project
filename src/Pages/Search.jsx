@@ -63,7 +63,7 @@ export default function Search() {
           </ul>
           <div className="country">
             <img
-              width="50px"
+              width="90px"
               alt={location.sys.country}
               src={`https://countryflagsapi.com/png/${location.sys.country}`}
             ></img>
@@ -72,12 +72,22 @@ export default function Search() {
       )}
     </div>
     <footer className="footer">
-        Todos os direitos reservados Guilherme Santiago
-        <div className="icons">
-        <img alt="Linkedin" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
-        <img alt="Linkedin" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />
+        <p>Developed by Guilherme Santiago</p>
+        <div className="images">
+        <a href="https://www.linkedin.com/in/guilherme-santiago-dev/" target="blank">
+        <img src="https://cdn-icons-png.flaticon.com/128/124/124011.png"
+        alt="linkedin icon" 
+        title="linkedin icon" 
+        width="25" height="25"></img>
+        </a>
+        <a href="https://github.com/GuilhermeSantiago18/" target="blank">
+        <img src="https://cdn-icons-png.flaticon.com/128/919/919847.png" 
+        alt="github " 
+        title="github " 
+        width="25"
+        height="25"></img>
+        </a>
         </div>
-        
     </footer>
     </>
   );
