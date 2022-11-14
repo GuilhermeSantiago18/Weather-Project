@@ -10,48 +10,78 @@ body {
 
 .container-global-maior {
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
   height: 90vh;
-  width: 99.3vw;
+  width: 100vw;
   background-color: rgba(0, 0, 0, 0.629);
+  /* position: absolute; */
   
 }
 .container-global {
   display: flex;
   justify-content: center;
-  align-items: center;
+  padding-bottom: 20px;
   
 }
 
+.inputs {
+  display: flex;
+  align-items: center;
+}
 
 .inputText {
   width: 300px;
   height: 30px;
   border-radius: 1em 0em 0em 1em;
   padding-left: 10px;
+  border: none;
 
 }
 .inputBtn {
   width: 180px;
-  height: 38px;
+  height: 31px;
   border-radius: 0em 1.1em 1.1em 0em;
   background-color: rgb(218, 165, 32);
+  cursor: pointer;
+ 
 }
+.inputBtn:active{
+  background-color: rgba(215, 163, 31, 0.827);
+ }
+
 
 .title {
   display: flex;
+  font-size: 50px;
   justify-content: center;
   color: rgb(218, 165, 32);
-}
-
-.informations {
-  background-color: gold;
+  padding-bottom: 50px;
+  padding-top: 150px;
 }
 
 .countryname {
   color: gold;
+}
+.section {
+  display: flex;
+  align-items: center;
+  width: 50vh;
+  justify-content: space-evenly;
+  margin-top: 30px;
+}
+.countryname {
+  font-size: 20px;
+  color: rgb(218, 141, 32);
+}
+
+.informations {
+  color: rgb(218, 165, 32);
+}
+.latitudes {
+  display: flex;
+  width: 30vh;
+  justify-content: space-between;
 }
 
 .footer {
@@ -63,3 +93,4 @@ body {
   justify-content: center;
   align-items: center;
 }
+

@@ -35,8 +35,8 @@ export default function Search() {
   return (
     <>
     <div className="container-global-maior">
-      <header className="title">
-        <h1>Weather Country</h1>
+      <header>
+        <h1 className="title">Weather and City</h1>
       </header>
     <div className="container-global">
       <div className="inputs">
@@ -47,12 +47,20 @@ export default function Search() {
           onChange={handleChange}
         />
         <button class="inputBtn" type="button" onClick={handleClick}>
-          Pesquisar
+          Search
         </button>
-      </div>
+        </div>
+        </div>
       {disable && (
         <section className="section">
-          <p className="countryname">City: {location.name}</p>
+          <ul className="informations">
+          <p className="countryname">City: {location.name}</p> 
+            <li>{Math.round(location.main.temp -273)} ºC</li>
+            <div className="latitudes">
+            Lat:<p>{location.coord.lat}</p>
+            Long:<p>{location.coord.lon}</p>
+            </div>
+          </ul>
           <div className="country">
             <img
               width="50px"
@@ -60,20 +68,16 @@ export default function Search() {
               src={`https://countryflagsapi.com/png/${location.sys.country}`}
             ></img>
           </div>
-          <ul className="informations">
-            Temperatura 
-            <p>{Math.round(location.main.temp -273)} ºC</p>
-            Latitude
-            <li>{location.coord.lat}</li>
-            Longitude
-            <li>{location.coord.lon}</li>
-          </ul>
         </section>
       )}
     </div>
-    </div>
     <footer className="footer">
-        Todos os direitos reservados a Richard apanha no codingame
+        Todos os direitos reservados Guilherme Santiago
+        <div className="icons">
+        <img alt="Linkedin" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
+        <img alt="Linkedin" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />
+        </div>
+        
     </footer>
     </>
   );
