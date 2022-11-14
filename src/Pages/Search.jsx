@@ -35,8 +35,8 @@ export default function Search() {
   return (
     <>
     <div className="container-global-maior">
-      <header className="title">
-        <h1>Weather Country</h1>
+      <header>
+        <h1 className="title">Weather and City</h1>
       </header>
     <div className="container-global">
       <div className="inputs">
@@ -47,33 +47,47 @@ export default function Search() {
           onChange={handleChange}
         />
         <button class="inputBtn" type="button" onClick={handleClick}>
-          Pesquisar
+          Search
         </button>
-      </div>
+        </div>
+        </div>
       {disable && (
         <section className="section">
-          <p className="countryname">City: {location.name}</p>
+          <ul className="informations">
+          <p className="countryname">City: {location.name}</p> 
+            <li>{Math.round(location.main.temp -273)} ºC</li>
+            <div className="latitudes">
+            Lat:<p>{location.coord.lat}</p>
+            Long:<p>{location.coord.lon}</p>
+            </div>
+          </ul>
           <div className="country">
             <img
-              width="50px"
+              width="90px"
               alt={location.sys.country}
               src={`https://countryflagsapi.com/png/${location.sys.country}`}
             ></img>
           </div>
-          <ul className="informations">
-            Temperatura 
-            <p>{Math.round(location.main.temp -273)} ºC</p>
-            Latitude
-            <li>{location.coord.lat}</li>
-            Longitude
-            <li>{location.coord.lon}</li>
-          </ul>
         </section>
       )}
     </div>
-    </div>
     <footer className="footer">
-        Todos os direitos reservados a Richard apanha no codingame
+        <p>Developed by Guilherme Santiago</p>
+        <div className="images">
+        <a href="https://www.linkedin.com/in/guilherme-santiago-dev/" target="blank">
+        <img src="https://cdn-icons-png.flaticon.com/128/124/124011.png"
+        alt="linkedin icon" 
+        title="linkedin icon" 
+        width="25" height="25"></img>
+        </a>
+        <a href="https://github.com/GuilhermeSantiago18/" target="blank">
+        <img src="https://cdn-icons-png.flaticon.com/128/919/919847.png" 
+        alt="github " 
+        title="github " 
+        width="25"
+        height="25"></img>
+        </a>
+        </div>
     </footer>
     </>
   );
