@@ -9,7 +9,7 @@ export default function Search() {
 
 
   const handleClick = async () => {
-    const urlWeather = `http://api.openweathermap.org/data/2.5/weather?q=${valueInput}&lang=pt_br,uk&APPID=6c65d4b916ef01e6bd8bec09df51d9b1`;
+    const urlWeather = `https://api.openweathermap.org/data/2.5/weather?q=${valueInput}&lang=pt_br,uk&APPID=6c65d4b916ef01e6bd8bec09df51d9b1`;
     const response = await fetch(urlWeather);
     const data = await response.json();
     if (data.cod === "400") {
