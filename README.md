@@ -10,3 +10,4 @@ Aplicação simples onde o usuário irá pesquisa pela cidade e verificar inform
 
 Aplicação está sendo desenvolvida com React e ContextApi, para o style CSS puro.
 
+https://weather-project-guilhermesantiago18.vercel.app/
